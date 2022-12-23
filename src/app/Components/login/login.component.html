@@ -1,1 +1,57 @@
-<p>login works!</p>
+<div class="reg-layout">
+    <div class="container" fxHide.lt-md>
+        <div fxLayout="column" >
+            <img class="signup-img" src="/assets/Shopping.png" width>
+            <p class="text">Online Book Shopping</p>
+        </div>
+    </div>
+
+    <div class="reg-container">
+        <div class="form-head" fxLayout="row" fxLayoutAlign="space-between center" >
+            <div fxLayout="row" fxLayoutAlign="space-around center" >
+                <button mat-flat-button class="login-head">LOGIN</button> 
+                <span class="line"></span>
+            <!-- </div> -->
+            <!-- <div fxLayout="row" fxLayoutAlign="start center"> -->
+                <button mat-flat-button class="signup-head" routerLink="/register">SIGNUP</button>
+                <span></span>
+            </div>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <mat-label>Email Id</mat-label>
+                <mat-form-field appearance="outline" >
+                    <input matInput type="email" placeholder="Email" formControlName="email">
+                    <mat-error>Email is required</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-label>Password</mat-label>
+                <mat-form-field appearance="outline" class="form-field">
+                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password">
+                    <button class="forgot-password" mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    </button>
+                    <mat-error>Password is required</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="forgot-password">
+            <button class="forgot-password" type="button" routerLink="/forgot-password" >Forgot Password?</button> 
+            </div>
+
+            <button mat-raised-button type="submit"  class="btn-primary" color="primary">Login</button>
+
+            <div class="devider">
+               ---------------- OR ----------------
+            </div>
+            
+            <div class="btns" >
+                <button mat-raised-button class="btn-facebook" color="primary" type="button">Facebook</button>
+                <button mat-raised-button class="btn-google" type="button">Google</button>
+            </div>
+        </form>
+
+    </div>
+</div>

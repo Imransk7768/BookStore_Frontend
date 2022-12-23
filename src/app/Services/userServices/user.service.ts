@@ -20,4 +20,12 @@ token:any;
     }
     return this.httpservice.postService('/User/Register',reqdata,false,header)
   }
+  login(data:any){
+    let header={
+      Headers:new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+  }
+  return this.httpservice.postService('/User/Login',data,false,header)
+}
 }
