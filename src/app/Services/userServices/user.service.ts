@@ -28,4 +28,14 @@ token:any;
   }
   return this.httpservice.postService('/User/Login',data,false,header)
 }
+forgetpassword(reqdata:any){
+  let header = {
+    headers: new HttpHeaders(
+      {
+        'Content-type' : 'application/json' ,
+        //Authorization : 'token' 
+      })
+  }
+  return this.httpservice.postService('/User/ForgetPassword?email='+(reqdata.Email),reqdata,false,header)
+}
 }
