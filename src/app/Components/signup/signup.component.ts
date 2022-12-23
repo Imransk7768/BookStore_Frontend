@@ -28,12 +28,12 @@ export class SignupComponent implements OnInit {
     this.submitted = true;
     if (this.signUpForm.valid) {
       let payload = {    
-        fullName: this.signUpForm.value.fullName, // leftside firstname is exactly same as that of backend API and rightside firstname i.e., ,firstName should be exact same as that of formcontrolname in .html file or same as written above in ngonit 
-        email: this.signUpForm.value.email,
-        password: this.signUpForm.value.password,
-        mobile:this.signUpForm.value.mobile,
+        FullName: this.signUpForm.value.fullName, // leftside firstname is exactly same as that of backend API and rightside firstname i.e., ,firstName should be exact same as that of formcontrolname in .html file or same as written above in ngonit 
+        Email: this.signUpForm.value.email,
+        Password: this.signUpForm.value.password,
+        Mobile:Number(this.signUpForm.value.mobile),
       }
-      this.userservice.register(payload).subscribe((response: any) => {    //subscribe is a method from observable
+      this.userservice.register(payload).subscribe((response: any) => {    
       console.log(response);
       localStorage.setItem("token",response.data)
       })

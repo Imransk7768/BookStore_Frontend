@@ -8,7 +8,9 @@ import { HttpService } from '../httpServices/http.service';
 export class UserService {
 token:any;
 
-  constructor(private httpservice: HttpService) { }
+  constructor(private httpservice: HttpService) {
+    this.token= localStorage.getItem("token")
+   }
   
   register(reqdata:any){
     let header = {
@@ -33,19 +35,21 @@ forgetpassword(reqdata:any){
     headers: new HttpHeaders(
       {
         'Content-type' : 'application/json' ,
+        'Authorization':this.token
       })
   }
   return this.httpservice.postService('/User/ForgetPassword?email='+(reqdata.Email),reqdata,false,header)
 }
-resetPassword(reqdata:any,token:any){
+ resetpassword(reqdata:any, token:any){
   console.log(reqdata);
 
  let header = {
       headers:new HttpHeaders({
         'Content-type':'application/json',
-        'Authorization':this.token
+        'Authorization': 'bearer '+this.token
       })
   }
   return this.httpservice.putService(`/User/ResetPassword?newPassword=${reqdata.newPassword}&confirmPassword=${reqdata.confirmPassword}`,{},true,header)
+  //return this.httpservice.putService('/User/ResetPasswordord',reqdata,true,header)
 }
 }

@@ -26,25 +26,46 @@ export class ResetpasswordComponent implements OnInit {
       
   } );
   //this.token = this.activeRoute.snapshot.paramMap.get('token');
+  this.token=localStorage.getItem('token');
+
   }
   get f() { return this.resetpasswordForm.controls; }
   
   onSubmit() {
     this.submitted = true;
-  
     if (this.resetpasswordForm.valid) {
+      console.log("valid");
       let payload = {
-        newPassword: this.resetpasswordForm.value.password,
-        confirmPassword: this.resetpasswordForm.value.confirmpassword,
+          newPassword: this.resetpasswordForm.value.password,
+          confirmPassword: this.resetpasswordForm.value.confirmpassword
       }
-     
-       this.user.resetPassword(payload,this.token).subscribe((response:any)=>{
-        console.log(response)
-        //localStorage.getItem('token')
-        //this.router.navigateByUrl('login')
-      })
-      let snackBarRef = this.snackBar.open('Password Reset Success','',{duration:2000});
+      this.user.resetpassword(payload,this.token).subscribe((response: any) => {
+        console.log(response);
+        console.log(response.data);
+        console.log(" Password Reset Success", response)
+      });
     }
-    
   }
-  }
+}
+  // onSubmit() {
+  //   this.submitted = true;
+  
+  //     if(this.resetpasswordForm.invalid){
+  //       console.log("invalid");
+      
+  //       console.log(this.resetpasswordForm.value);
+  //         let payload = {
+  //           newPassword: this.resetpasswordForm.value.password,
+  //           confirmPassword: this.resetpasswordForm.value.confirmpassword
+  //         }
+
+  //       this.user.resetpassword(payload,this.token).subscribe((response:any)=>{
+  //         console.log(response);
+  //         console.log(response.data);
+  //     })
+  //     let snackBarRef = this.snackBar.open('Password Reset Success','',{duration:2000});
+  //   }
+  // }
+  // }
+
+ 
