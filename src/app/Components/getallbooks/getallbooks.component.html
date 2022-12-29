@@ -1,0 +1,91 @@
+<!-- <div>
+    <div class="heading" fxLayout="row" fxLayoutAlign="space-between center">
+
+        <div class="bookHead" fxLayout="row" fxLayoutAlign="start center">
+            <span style="font-size: 22px; font-weight: 500;">Books</span>
+            <span class="booksCount">({{totalbooks}} items)</span>
+        </div>
+
+        <mat-form-field appearance="outline" style="padding-top: 15px;">
+            <mat-label>{{sortBy}}</mat-label>
+            <mat-select>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="display-books" fxLayout="row" fxLayoutAlign="start start">
+        <mat-card class="book" *ngFor="let book of bookList" routerLink="/dashboard/displaybook">
+            <div class="book-image" fxLayout="column" fxLayoutAlign="center center"
+                [style.background]="book.bookCount==0? '#dee2e6' : '#F5F5F5'">
+                <img [src]="book.bookImage" width="125px" height="170px">
+                <span class="outOfStock" *ngIf="book.bookCount == 0">OUT OF STOCK</span>
+                <span *ngIf="book.bookCount!=0"></span>
+            </div>
+
+            <div class="book-details" fxLayout="column" fxLayoutAlign="start start">
+                <span class="bookName">{{book.bookName}}</span>
+                <span class="authorName"> by {{book.authorName}}</span>
+                <div fxLayout="row" fxLayoutAlign="center center" style="    margin-bottom: 3px;">
+                    <div class="rating" fxLayout="row" fxLayoutAlign="center center">
+                        <span fxLayoutAlign="center center"
+                            style="padding-top: 2px; margin-right: 2px;">{{book.rating}}</span>
+                        <img src="../../../assets/star.jpeg" width="12px">
+                    </div>
+                    <span class="totalRating">({{book.totalRating}})</span>
+                </div>
+                <div fxLayout="row">
+                    <span class="discountPrice">Rs. {{book.discountPrice}}</span>
+                    <span class="originalPrice">Rs. {{book.originalPrice}}</span>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div> -->
+
+<div>
+    <div class="heading" fxLayout="row" fxLayoutAlign="space-between center">
+  
+      <div class="bookHead" fxLayout="row" fxLayoutAlign="start center">
+        <span style="font-size: 22px; font-weight: 500;">Books</span>
+        <span class="booksCount">({{totalbooks}} items)</span>
+      </div>
+  
+      <mat-form-field appearance="outline" style="padding-top: 15px;">
+        <mat-label>{{sortBy}}</mat-label>
+        <mat-select>
+  
+  
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div class="display-books" fxLayout="row" fxLayoutAlign="start start">
+      <mat-card class="book" *ngFor="let book of bookList">
+        <div class="book-image" fxLayout="column" fxLayoutAlign="center center"
+          [style.background]="book.bookCount==0? '#dee2e6' : '#F5F5F5'">
+          <img [src]="book.bookImage" width="125px" height="170px">
+          <span class="outOfStock" *ngIf="book.bookCount == 0">OUT OF STOCK</span>
+          <button class="quickView" *ngIf="book.bookCount!=0" routerLink="/displaybook" (click)="quickView(book.bookId)">QUICK VIEW</button>
+        </div>
+  
+        <div class="book-details" fxLayout="column" fxLayoutAlign="start start">
+          <span class="bookName">{{book.bookName}}</span>
+          <span class="authorName">by {{book.authorName}}</span>
+          <div fxLayout="row" fxLayoutAlign="center center" style="    margin-bottom: 3px;">
+            <div class="rating" fxLayout="row" fxLayoutAlign="center center">
+              <span fxLayoutAlign="center center" style="padding-top: 2px; margin-right: 2px;">{{book.rating}}</span>
+              <img src="../../../assets/grey-star.png" width="12px">
+            </div>
+            <span class="totalRating">({{book.totalRating}})</span>
+          </div>
+          <div fxLayout="row">
+            <span class="discountPrice">Rs. {{book.discountPrice}}</span>
+            <span class="originalPrice">Rs. {{book.originalPrice}}</span>
+          </div>
+        </div>
+  
+      </mat-card>
+    </div>
+  
+  
+  </div>

@@ -1,0 +1,238 @@
+
+// .heading{
+//     padding-left: 170px;
+//     padding-top: 20px;
+//     padding-right: 270px;
+// }
+// .bookHead{
+//     align-items: center; 
+//     margin-left: 10px;
+//     margin-bottom: 10px;
+//   }
+//   .booksCount{
+//     margin-top: 5px;
+//     margin-left: 5px;
+//     color: #9D9D9D;
+//   }
+
+//   .bookImg{
+    
+//     padding-left: 67px;
+//     padding-top: 17px;
+//     padding-right: 61px;
+//     padding-bottom: 20px;
+//   }
+//   .book{
+//     margin: 10px;
+//     display: flex;
+//     flex-direction: column;
+//     align-content: center;
+//     border-radius: 5px;
+//     border: 1px solid lightgray;
+//     width: 235px;
+//     height:275px;
+    
+//   }
+//   .book-details{
+//     padding: 10px 20px;
+//   }
+//   .bookName{
+//     letter-spacing: 0px;
+//     color: #0A0102;
+//     margin-bottom: 2px;
+//   }
+//   .authorName{
+//     letter-spacing: 0px;
+//     font-size: 13px;
+//     color: #878787;
+//     margin-bottom: 2px;
+  
+//   }
+//   .rating{
+//     width: 33px;
+//     height: 16px;
+//     background: #388E3C 0% 0% no-repeat padding-box;
+//     border-radius: 1px;
+//     font-size: 11px;
+//     color: #FFFFFF;
+//     margin-right: 5px;
+//     padding: 2px;
+//   }
+//   .totalRating{
+//     color: #878787;
+//     font-size: 12px;
+//   }
+//   .discountPrice{
+//     font-size: 12px;
+//     font-weight: 600;
+//     color: #0A0102;
+//     margin-right: 10px;
+//   }
+//   .originalPrice{
+//     font-size: 11px;
+//     font-weight: 600;
+//     text-decoration: line-through;
+//     letter-spacing: 0px;
+//     color: #878787;
+//   }
+//   .display-books{
+//     flex-wrap: wrap;
+//     padding-left:172px;
+//     //padding-right: 177px;
+//     //height:auto;
+//   }
+//   mat-card{
+//     padding: 0px !important;
+//   }
+//  .white-color{
+//     color:#151414;
+//   }
+   
+//   .viewbook{
+//     width: 80px;
+//     height: 25px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     color: #FFFFFF;
+//     font-size: 11px;
+//     background: #353535 0% 0% no-repeat padding-box;
+//     border-radius: 1px;
+//     position: absolute;
+//     top: 120px;  
+//     cursor:pointer;
+//   }
+//   .outOfStock{
+//     width: 178px;
+//     height: 37px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 16px;
+//     background: #FFFFFF 0% 0% no-repeat padding-box;
+//     box-shadow: 0px 3px 6px #00000029;
+//     border-radius: 2px;
+//     opacity: 0.96;
+//     position:absolute;
+//     top: 150px
+//   }
+
+
+
+.heading{
+    padding-left: 170px;
+    padding-top: 20px;
+    padding-right: 270px;
+}
+.bookHead{
+    align-items: center; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  .booksCount{
+    margin-top: 5px;
+    margin-left: 5px;
+    color: #9D9D9D;
+  }
+
+  .bookImg{
+    
+    padding-left: 67px;
+    padding-top: 17px;
+    padding-right: 61px;
+    padding-bottom: 20px;
+  }
+  .book{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    width: 235px;
+    height:275px;
+    
+  }
+  .book-details{
+    padding: 10px 20px;
+  }
+  .bookName{
+    letter-spacing: 0px;
+    color: #0A0102;
+    margin-bottom: 2px;
+  }
+  .authorName{
+    letter-spacing: 0px;
+    font-size: 13px;
+    color: #878787;
+    margin-bottom: 2px;
+  
+  }
+  .rating{
+    width: 33px;
+    height: 16px;
+    background: #388E3C 0% 0% no-repeat padding-box;
+    border-radius: 1px;
+    font-size: 11px;
+    color: #FFFFFF;
+    margin-right: 5px;
+    padding: 2px;
+  }
+  .totalRating{
+    color: #878787;
+    font-size: 12px;
+  }
+  .discountPrice{
+    font-size: 12px;
+    font-weight: 600;
+    color: #0A0102;
+    margin-right: 10px;
+  }
+  .originalPrice{
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: line-through;
+    letter-spacing: 0px;
+    color: #878787;
+  }
+  .display-books{
+    flex-wrap: wrap;
+    padding-left:172px;
+    padding-right: 177px;
+    //height:auto;
+  }
+  mat-card{
+    padding: 0px !important;
+  }
+ .white-color{
+    color:#151414;
+  }
+   
+  .quickView{
+    width: 80px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 11px;
+    background: #353535 0% 0% no-repeat padding-box;
+    border-radius: 1px;
+    position: absolute;
+    top: 120px;  
+    cursor:pointer;
+  }
+  .outOfStock{
+    width: 178px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 2px;
+    opacity: 0.96;
+    position:absolute;
+    top: 150px
+  }
