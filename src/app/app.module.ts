@@ -11,6 +11,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +21,8 @@ import { LoginComponent } from './Components/login/login.component';
 import { ForgetpasswordComponent } from './Components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { DisplaybookComponent } from './Components/displaybook/displaybook.component';
+import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     LoginComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    DisplaybookComponent,
+    GetallbooksComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +48,8 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatMenuModule,
+    MatSelectModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

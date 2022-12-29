@@ -33,17 +33,12 @@ export class LoginComponent implements OnInit {
         console.log(response);
        // console.log(response.data);
         localStorage.setItem('token',response.data)
-        
+        this.router.navigateByUrl('/dashboard/getallbooks')
       })
       let snackBarRef = this.snackBar.open('Login successfully','',{duration:2000});
     }
     else{
       console.log("not works");
-      
     }
-   // this.router.navigateByUrl('/home/books');
-
   }
-
-
 }

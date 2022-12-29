@@ -9,8 +9,9 @@ export class DashboardComponent implements OnInit {
 
   constructor() { }
   fullName: any='';
+
   ngOnInit(): void {
-    this.fullName = localStorage.getItem('name');
+    this.fullName = localStorage.getItem('fullName');
   }
   logOut(){
     localStorage.removeItem('token');
