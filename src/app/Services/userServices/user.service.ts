@@ -6,50 +6,48 @@ import { HttpService } from '../httpServices/http.service';
   providedIn: 'root'
 })
 export class UserService {
-token:any;
+  token: any;
 
   constructor(private httpservice: HttpService) {
-    this.token= localStorage.getItem("token")
-   }
-  
-  register(reqdata:any){
+    this.token = localStorage.getItem("token")
+  }
+
+  register(reqdata: any) {
     let header = {
       headers: new HttpHeaders(
         {
-          'Content-type' : 'application/json' ,
-          //Authorization : 'token' 
+          'Content-type': 'application/json',
         })
     }
-    return this.httpservice.postService('/User/Register',reqdata,false,header)
+    return this.httpservice.postService('/User/Register', reqdata, false, header)
   }
-  login(data:any){
-    let header={
-      Headers:new HttpHeaders({
+  login(data: any) {
+    let header = {
+      Headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
+    }
+    return this.httpservice.postService('/User/Login', data, false, header)
   }
-  return this.httpservice.postService('/User/Login',data,false,header)
-}
-forgetpassword(reqdata:any){
-  let header = {
-    headers: new HttpHeaders(
-      {
-        'Content-type' : 'application/json' ,
-        'Authorization':this.token
-      })
+  forgetpassword(reqdata: any) {
+    let header = {
+      headers: new HttpHeaders(
+        {
+          'Content-type': 'application/json',
+        })
+    }
+    return this.httpservice.postService('/User/ForgetPassword?email=' + (reqdata.email), reqdata, false, header)
   }
-  return this.httpservice.postService('/User/ForgetPassword?email='+(reqdata.Email),reqdata,false,header)
-}
- resetpassword(reqdata:any, token:any){
-  console.log(reqdata);
+  resetpassword(reqdata: any, token: any) {
+    console.log(reqdata);
 
- let header = {
-      headers:new HttpHeaders({
-        'Content-type':'application/json',
-        'Authorization': 'bearer '+this.token
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'bearer ' + this.token
       })
+    }
+    //return this.httpservice.putService(`/User/ResetPassword?newPassword=${reqdata.newPassword}&confirmPassword=${reqdata.confirmPassword}`, {}, true, header)
+    return this.httpservice.postService('/User/ResetPassword?newPassword='+reqdata.newpassword+'&confirmPassword='+reqdata.confirmpassword,{},true,header)
   }
-  return this.httpservice.putService(`/User/ResetPassword?newPassword=${reqdata.newPassword}&confirmPassword=${reqdata.confirmPassword}`,{},true,header)
-  //return this.httpservice.putService('/User/ResetPasswordord',reqdata,true,header)
-}
 }
