@@ -98,19 +98,6 @@ input.mat-input-element {
 .mat-flat-button{
     line-height: 25px;
 }
-
-// footer{
-//     display: flex;
-//     align-items: center;
-//     background: #2E1D1E 0% 0% no-repeat padding-box;
-//     color: white;
-//     // height: 50px;
-//     padding: 0% 10%;
-//     padding-top: 15px;
-//     padding-bottom: 15px;
-//     margin-top: auto;
-// }
-
 footer{
     display: flex;
     align-items: center;
@@ -121,7 +108,7 @@ footer{
     padding-top: 15px;
     padding-bottom: 15px;
     //margin-top: auto;
-    margin-top: 693px;
+    margin-top: 615px;
 }
 .profile{
     margin: 10px 10px;
@@ -163,4 +150,17 @@ footer{
         margin-left: 5%;
         margin-right: 5%;
     }
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: 153%;
+    }
+    .footer{
+    display: flex;
+    align-items: center;
+    background: #2E1D1E 0% 0% no-repeat padding-box;
+    color: white;
+    margin-top: auto;
+}
 }

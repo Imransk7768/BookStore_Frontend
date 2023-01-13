@@ -11,10 +11,15 @@ import { UserService } from 'src/app/Services/userServices/user.service';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-
+  submitted=false;
   loginForm!: FormGroup;
+  token:any;
+  userId:any;
+  SetValues:any;
 
-  constructor(private formBuilder: FormBuilder,private user:UserService, private snackBar: MatSnackBar,private router:Router) { }
+  constructor(private formBuilder: FormBuilder,private user:UserService, private snackBar: MatSnackBar,private router:Router) { 
+    
+  }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -22,17 +27,22 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required]],
     });
   }
+  get f() { return this.loginForm.controls; }
   onSubmit(){
+    //this.getUserData()
+    this.submitted = true;
+
     if(this.loginForm.valid){
       console.log("sign in Success");
       let payload={
-        Email:this.loginForm.value.email,
+        EmailId:this.loginForm.value.email,
         Password:this.loginForm.value.password
       }
       this.user.login(payload).subscribe((response:any)=>{
         console.log(response);
-       // console.log(response.data);
-        localStorage.setItem('token',response.data)
+       console.log(response.data);
+        localStorage.setItem("token",response.data)
+
         this.router.navigateByUrl('/dashboard/getallbooks')
       })
       let snackBarRef = this.snackBar.open('Login successfully','',{duration:2000});
@@ -41,4 +51,12 @@ export class LoginComponent implements OnInit {
       console.log("not works");
     }
   }
+  getUserData()
+    {
+        this.SetValues=this.SetValues.filter((response:any)=>{
+          localStorage.setItem('userId',response.userId)
+          localStorage.setItem('fullName',response.fullName)
+          localStorage.setItem('mobileNumber',response.mobileNumber)
+        })
+    }
 }

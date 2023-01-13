@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+  }
+  
+  .message{
+    width: 354px;
+    height: 66px;
+    font: normal normal normal 18px/22px Lato;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #333232;
+    margin: 20px 0px;
+  }
+  
+  .table{
+    color: #333232;
+    border-collapse: collapse;
+    width: 751px;
+    height: 112px;
+  }
+  
+  tr {
+    border: 2px solid #dddddd;
+    width: 751px;
+    height: 42px;
+  }
+  
+  th {
+    padding: 8px;
+    min-width: 108px;
+    font: normal normal medium 12px/15px Lato;
+  }
+  
+  td {
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font: normal normal medium 12px/15px Lato;
+  }

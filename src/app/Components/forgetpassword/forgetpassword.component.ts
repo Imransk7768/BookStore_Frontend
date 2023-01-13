@@ -19,7 +19,7 @@ export class ForgetpasswordComponent implements OnInit {
   onSubmit() {
     if (this.forgotPasswordForm.valid) {
       let reqData = {
-        Email: this.forgotPasswordForm.value.email,
+        email: this.forgotPasswordForm.value.email,
       }
       this.user.forgetpassword(reqData).subscribe((response: any) => {
         console.log(response);

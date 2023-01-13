@@ -36,8 +36,8 @@ export class ResetpasswordComponent implements OnInit {
     if (this.resetpasswordForm.valid) {
       console.log("valid");
       let payload = {
-          newPassword: this.resetpasswordForm.value.password,
-          confirmPassword: this.resetpasswordForm.value.confirmpassword
+          newpassword: this.resetpasswordForm.value.password,
+          confirmpassword: this.resetpasswordForm.value.confirmpassword
       }
       this.user.resetpassword(payload,this.token).subscribe((response: any) => {
         console.log(response);

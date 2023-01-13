@@ -13,25 +13,28 @@ export class SignupComponent implements OnInit {
   hide = true;
   signUpForm!:FormGroup;
   submitted = false;
+  fullName:any;
 
-  constructor(private formBuilder: FormBuilder,private userservice:UserService, private snackBar:MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder,private userservice:UserService, private snackBar:MatSnackBar) { 
+  }
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
       fullName: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
+      emailId: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
-      mobile: ['', [Validators.required]]
+      mobileNumber: ['', [Validators.required]]
     });
+    this.fullName=localStorage.setItem('fullName',this.fullName)
   }
   onSubmit() {
     this.submitted = true;
     if (this.signUpForm.valid) {
       let payload = {    
         FullName: this.signUpForm.value.fullName, // leftside firstname is exactly same as that of backend API and rightside firstname i.e., ,firstName should be exact same as that of formcontrolname in .html file or same as written above in ngonit 
-        Email: this.signUpForm.value.email,
+        EmailId: this.signUpForm.value.emailId,
         Password: this.signUpForm.value.password,
-        Mobile:Number(this.signUpForm.value.mobile),
+        MobileNumber:Number(this.signUpForm.value.mobileNumber),
       }
       this.userservice.register(payload).subscribe((response: any) => {    
       console.log(response);

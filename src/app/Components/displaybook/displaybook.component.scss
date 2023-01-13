@@ -26,25 +26,25 @@
   .buttons{
     //width: 230px;
     margin-top: 10px;
-    margin-left: 34px;
+    //margin-left: 34px;
     
   }
   .bag{
     background: #A03037;  
     color: white;  
     font-size: 13px;
-    width: 148px;
-    height:40px;
+    width: 145px;
+    height:47px;
   }
   .wishlist{
-    background: #333333;
-    color: white;
     font-size: 13px;
-    background: #A03037;  
+    background: black;  
     color: white;  
     font-size: 13px;
-    width: 148px;
-    height:40px;
+    width: 145px;
+    height:47px;
+    margin-left: 20px;
+        
   }
   .book-details{
     padding: 10px 10px 10px 25px;
@@ -121,7 +121,7 @@
     margin-bottom: 5px;
     margin-top: 5px;
   }
-  .detail{
+  .description{
     color: #373434;
     font: normal normal normal 17px/15x Roboto;
   }
